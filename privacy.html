@@ -162,12 +162,12 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">NeoVid Converter &mdash; Effective 25 August 2026</p>
+        <p class="subtitle">NeoVid Converter &mdash; Effective 26 August 2026</p>
 
         <div class="highlight-box">
             <p><strong>Summary:</strong> NeoVid Converter processes all your media files
-            entirely on your device. We do not upload, stream, or transmit your videos,
-            audio files, or contact data to any server.</p>
+            locally on your device using bundled FFmpeg libraries. We do not upload, stream,
+            or transmit your videos, audio files, or contact data to any server.</p>
         </div>
 
         <h2>1. Who We Are</h2>
@@ -175,166 +175,159 @@
         ("we", "us", "our"). If you have questions about this policy, contact us at
         <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a>.</p>
 
-        <h2>2. Information We Collect</h2>
+        <h2>2. Information We Collect and Process</h2>
 
         <h3>2.1 Information You Provide</h3>
-        <p>If you contact us for support, we receive the email address and message content
-        you send. We use this solely to respond to your inquiry.</p>
+        <p>If you contact us for customer support, we receive the email address and message
+        content you send. We use this solely to respond to your inquiry and assist with your request.</p>
 
         <h3>2.2 Information Collected Automatically</h3>
+        <p>When you use the App, certain information is collected automatically via integrated
+        Google service SDKs to ensure stability, measure non-identifying performance metrics,
+        serve advertisements, and manage in-app subscriptions:</p>
 
         <table>
             <thead>
                 <tr>
                     <th>Data Type</th>
                     <th>Purpose</th>
-                    <th>Shared With</th>
+                    <th>Shared / Processed With</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Advertising ID</strong></td>
-                    <td>Serve and measure ads via Google AdMob</td>
+                    <td><strong>Crash logs &amp; Diagnostics</strong></td>
+                    <td>Monitor app stability, analyze fatal crashes, and diagnose conversion failures. Error messages are strictly redacted so no personal filenames or paths are included.</td>
+                    <td>Google (Firebase Crashlytics)</td>
+                </tr>
+                <tr>
+                    <td><strong>App interactions &amp; Analytics</strong></td>
+                    <td>Measure feature usage, conversion funnel completions/failures, screen navigation, and aggregate performance.</td>
+                    <td>Google (Firebase Analytics)</td>
+                </tr>
+                <tr>
+                    <td><strong>Advertising ID &amp; Ad Metrics</strong></td>
+                    <td>Serve and measure personalized or non-personalized ads (free tier only, subject to user consent).</td>
                     <td>Google (AdMob)</td>
                 </tr>
                 <tr>
-                    <td><strong>App interactions</strong></td>
-                    <td>Ad impression and click measurement</td>
-                    <td>Google (AdMob)</td>
+                    <td><strong>Device &amp; OS Information</strong></td>
+                    <td>Crash diagnostic context (device model, OS version, architecture) and ad delivery.</td>
+                    <td>Google (Firebase Crashlytics, AdMob)</td>
                 </tr>
                 <tr>
-                    <td><strong>Device info</strong></td>
-                    <td>Ad targeting (device model, OS version, language)</td>
-                    <td>Google (AdMob)</td>
-                </tr>
-                <tr>
-                    <td><strong>Purchase history</strong></td>
-                    <td>Verify subscription/lifetime purchase status via Google Play Billing</td>
-                    <td>Google (Play Billing)</td>
+                    <td><strong>Purchase &amp; Subscription Tokens</strong></td>
+                    <td>Verify and manage subscription / Lifetime Pro entitlement.</td>
+                    <td>Google (Google Play Billing)</td>
                 </tr>
             </tbody>
         </table>
 
-        <h3>2.3 Information Accessed On-Device Only (Never Collected)</h3>
-        <p>The following data is accessed locally on your device and is
-        <strong>never transmitted</strong> to us or any third party:</p>
+        <h3>2.3 Information Processed On-Device Only (Never Collected or Transmitted)</h3>
+        <p>The following data is processed exclusively on your local device and is
+        <strong>never transmitted</strong> to us, Google, or any third party:</p>
 
         <table>
             <thead>
                 <tr>
                     <th>Data Type</th>
                     <th>Purpose</th>
-                    <th>Permission</th>
+                    <th>Permission Used</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Media files</strong> (video, audio)</td>
-                    <td>Convert between formats, extract audio, batch process</td>
-                    <td>READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, or media picker</td>
+                    <td><strong>Media files (Video &amp; Audio)</strong></td>
+                    <td>Locally convert, extract, compress, trim, merge, or adjust speed of files you select.</td>
+                    <td>READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, or system photo/media picker</td>
                 </tr>
                 <tr>
                     <td><strong>Contacts</strong></td>
-                    <td>Set a converted audio file as a specific contact's ringtone</td>
+                    <td>Assign a converted audio track as a specific contact's ringtone when requested. A prominent in-app disclosure is displayed before permission is requested.</td>
                     <td>READ_CONTACTS, WRITE_CONTACTS</td>
                 </tr>
                 <tr>
-                    <td><strong>System settings</strong></td>
-                    <td>Set a converted audio file as the device's default ringtone,
-                        notification, or alarm sound</td>
+                    <td><strong>System Settings</strong></td>
+                    <td>Set a converted audio track as the default phone ringtone, notification sound, or alarm.</td>
                     <td>WRITE_SETTINGS</td>
                 </tr>
             </tbody>
         </table>
 
         <div class="highlight-box">
-            <p>All media conversion happens entirely on your device using the FFmpeg
-            libraries. No media file ever leaves your phone.</p>
+            <p>All video and audio processing is performed 100% on-device by local native FFmpeg
+            libraries. No user files, filenames, or folder paths are ever uploaded to any cloud server.</p>
         </div>
 
-        <h2>3. Advertising</h2>
-        <p>The free version of the App displays ads served by
-        <strong>Google AdMob</strong>. AdMob may collect your Advertising ID and device
-        information to serve personalised or non-personalised ads depending on your
-        consent choice.</p>
-        <p>For users in the European Economic Area (EEA), United Kingdom, or Switzerland,
-        the App presents a consent dialog (powered by the Google User Messaging Platform)
-        before any ads are loaded, in accordance with the EU ePrivacy Directive and GDPR.
-        You may update your consent choice at any time from
-        <strong>Settings&nbsp;&rarr; Privacy&nbsp;Options&nbsp;(Ad&nbsp;Consent)</strong>.</p>
-        <p>Premium subscribers (Monthly or Lifetime Pro) do not see ads, and the Advertising
-        ID is not collected for those users.</p>
-        <p>Google's privacy policy:
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
-        https://policies.google.com/privacy</a></p>
+        <h2>3. Crash Reporting and Diagnostics (Firebase Crashlytics)</h2>
+        <p>The App integrates <strong>Firebase Crashlytics</strong> (including native NDK crash handling)
+        to capture application crashes and system errors. Diagnostic reports include stack traces,
+        device state at the time of crash, and high-level non-identifying build keys (e.g. build type,
+        app version, subscription tier). Any error strings originating from conversion tasks are
+        passed through a strict redaction filter before reporting to strip all personal file names,
+        paths, and URIs.</p>
 
-        <h2>4. In-App Purchases</h2>
-        <p>The App offers optional subscriptions and a lifetime purchase through
-        <strong>Google Play Billing</strong>. All payment processing is handled entirely
-        by Google. We do not collect or store your payment credentials. We receive a
-        purchase token from Google to verify your subscription status.</p>
+        <h2>4. Product Analytics (Google Analytics for Firebase)</h2>
+        <p>We use <strong>Google Analytics for Firebase</strong> to understand aggregate usage trends,
+        such as conversion completion rates, screen views, and ad impression revenue.
+        Analytics collection is subject to user consent signals (Consent Mode) and can be managed
+        via in-app privacy settings.</p>
 
-        <h2>5. How We Use Your Information</h2>
+        <h2>5. Advertising (Google AdMob &amp; Consent Management)</h2>
+        <p>The free version of the App displays ads served by <strong>Google AdMob</strong>.
+        AdMob may use your Advertising ID and device information in accordance with your consent preferences.</p>
+        <p>For users located in the European Economic Area (EEA), United Kingdom, and Switzerland,
+        the App presents a Google-certified Consent Management Platform (User Messaging Platform / UMP)
+        dialog before any ads are requested or loaded. You can change your consent preferences at any time
+        by navigating to <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>.</p>
+        <p>Subscribers to <strong>Monthly Access</strong> or <strong>Lifetime Pro</strong> enjoy an ad-free
+        experience with ad requests and ad-related measurement disabled.</p>
+
+        <h2>6. In-App Purchases (Google Play Billing)</h2>
+        <p>The App offers optional in-app purchases and subscriptions through <strong>Google Play Billing</strong>.
+        All payment processing and billing transactions are handled exclusively by Google Play. We do not
+        collect, store, or have access to your payment card details or financial credentials.</p>
+
+        <h2>7. Third-Party Service Providers</h2>
+        <p>We share data only with the third-party providers listed below to support core app functionality:</p>
         <ul>
-            <li>Serve and measure advertisements (free users only)</li>
-            <li>Verify and manage your subscription status</li>
-            <li>Respond to support inquiries</li>
+            <li><strong>Google Firebase (Crashlytics &amp; Analytics):</strong>
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
+            <li><strong>Google AdMob:</strong>
+                <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Privacy</a></li>
+            <li><strong>Google Play Billing:</strong>
+                <a href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank" rel="noopener">Google Play Terms</a></li>
         </ul>
-        <p>We do <strong>not</strong> use your information to build user profiles,
-        track you across apps, sell your data, or train machine learning models.</p>
+        <p>We do <strong>not</strong> sell, rent, monetize, or trade your personal data to any third party.</p>
 
-        <h2>6. Data Sharing</h2>
-        <p>We share data only with the third-party service providers listed above:</p>
+        <h2>8. Data Retention</h2>
         <ul>
-            <li><strong>Google AdMob</strong> — Advertising ID and device info for ad
-                serving (free users, subject to consent)</li>
-            <li><strong>Google Play Billing</strong> — Purchase tokens for subscription
-                management</li>
+            <li><strong>Support Correspondence:</strong> Retained only as long as necessary to address and resolve your support request.</li>
+            <li><strong>Analytics &amp; Crash Data:</strong> Stored and automatically purged by Google per standard Firebase retention schedules.</li>
+            <li><strong>Local Media &amp; Files:</strong> Stored strictly on your local device. Uninstalling the app removes all local database records and application-scoped files.</li>
         </ul>
-        <p>We do not sell, rent, or trade your personal information to any other party.</p>
-
-        <h2>7. Data Retention</h2>
-        <ul>
-            <li><strong>Support correspondence:</strong> Retained for as long as needed to
-                resolve your inquiry, then deleted.</li>
-            <li><strong>Advertising data:</strong> Managed by Google per their retention
-                policies.</li>
-            <li><strong>On-device data:</strong> Stays on your device under your control.
-                Uninstalling the App removes all locally stored app data.</li>
-        </ul>
-
-        <h2>8. Data Security</h2>
-        <p>We implement reasonable measures to protect the limited data we process.
-        All network communications with third-party SDKs (AdMob, Play Billing) use
-        encrypted HTTPS connections. However, no method of electronic transmission is
-        100% secure, and we cannot guarantee absolute security.</p>
 
         <h2>9. Children's Privacy</h2>
-        <p>The App is not directed at children under 13 (or the applicable age in your
-        jurisdiction). We do not knowingly collect personal information from children.
-        If you believe a child has provided us with personal information, please contact
-        us and we will take steps to delete it.</p>
+        <p>The App is intended for general audiences and is not directed at children under the age of 13
+        (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information
+        from children.</p>
 
-        <h2>10. Your Rights</h2>
-        <p>Depending on your jurisdiction, you may have the right to:</p>
+        <h2>10. Your Rights &amp; Choices</h2>
+        <p>Depending on your location and applicable privacy legislation (such as GDPR or CCPA), you have the right to:</p>
         <ul>
-            <li>Access, correct, or delete your personal data</li>
-            <li>Withdraw consent for ad personalisation (via the in-app consent dialog)</li>
-            <li>Reset or delete your Advertising ID (via your device's Android settings)</li>
-            <li>Request a copy of data we hold about you</li>
-            <li>Lodge a complaint with your local data protection authority</li>
+            <li>Withdraw or modify ad consent at any time via <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>.</li>
+            <li>Reset or delete your Advertising ID through your Android device's system settings (<em>Settings &rarr; Google &rarr; Ads</em>).</li>
+            <li>Request information regarding data processed in connection with your support inquiries.</li>
         </ul>
-        <p>To exercise any of these rights, contact
+        <p>To make an inquiry or exercise your privacy rights, please contact us at
         <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a>.</p>
 
         <h2>11. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. The "Effective" date at
-        the top of this page indicates when the latest revision took effect. Continued use
-        of the App after a change constitutes acceptance of the updated policy.</p>
+        <p>We may update this Privacy Policy from time to time to reflect updates in our app or regulatory requirements.
+        The effective date at the top indicates when the latest version was published.</p>
 
         <h2>12. Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy, please contact
-        us at:</p>
+        <p>If you have any questions or comments regarding this Privacy Policy, please contact us at:</p>
         <p><strong>NetsoftTouch</strong><br>
         Email: <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a></p>
 

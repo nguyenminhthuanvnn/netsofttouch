@@ -13,6 +13,8 @@
             --accent: #b388ff;
             --accent-dim: rgba(179, 136, 255, 0.15);
             --border: rgba(255, 255, 255, 0.08);
+            --warning-dim: rgba(255, 171, 64, 0.15);
+            --warning-border: #ffab40;
         }
 
         * {
@@ -110,8 +112,8 @@
         }
 
         .warning-box {
-            background: rgba(255, 152, 0, 0.1);
-            border-left: 3px solid #ff9800;
+            background: var(--warning-dim);
+            border-left: 3px solid var(--warning-border);
             padding: 16px 20px;
             border-radius: 0 8px 8px 0;
             margin: 20px 0;
@@ -119,6 +121,14 @@
 
         .warning-box p {
             margin-bottom: 0;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
         }
 
         .footer {
@@ -143,28 +153,30 @@
 <body>
     <div class="container">
         <h1>Terms of Service</h1>
-        <p class="subtitle">NeoVid Converter &mdash; Effective 25 August 2026</p>
+        <p class="subtitle">NeoVid Converter &mdash; Effective 26 August 2026</p>
 
-        <p>Please read these Terms of Service ("Terms") carefully before using
-        NeoVid&nbsp;Converter ("the App"). By installing or using the App, you agree to be
-        bound by these Terms. If you do not agree, do not use the App.</p>
+        <div class="highlight-box">
+            <p><strong>Summary:</strong> By using NeoVid Converter, you agree to these Terms.
+            You must only convert media files you have the legal right to process. The app uses
+            LGPL-licensed FFmpeg libraries, and nothing in these terms limits your right to
+            reverse engineer the app to debug modifications to those libraries.</p>
+        </div>
 
         <h2>1. Acceptance of Terms</h2>
-        <p>These Terms constitute a legally binding agreement between you ("you", "your")
-        and <strong>NetsoftTouch</strong> ("we", "us", "our"), the publisher of the App.
-        We may update these Terms at any time; the "Effective" date above reflects the
-        most recent revision. Continued use of the App after an update constitutes
-        acceptance of the revised Terms.</p>
+        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you
+        and <strong>NetsoftTouch</strong> ("we", "us", "our") regarding your use of the
+        <strong>NeoVid Converter</strong> mobile application ("the App").</p>
+        <p>By downloading, installing, or using the App, you agree to be bound by these Terms
+        and our <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the App.</p>
 
-        <h2>2. Description of Service</h2>
-        <p>NeoVid Converter is a mobile application that converts video and audio files
-        between formats, extracts audio from video, and allows setting converted audio as
-        ringtones. All media processing is performed <strong>entirely on your
-        device</strong> using the FFmpeg multimedia framework.</p>
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 13 years old (or the applicable age of digital consent in your
+        jurisdiction) to use the App. By using the App, you represent and warrant that you meet
+        this requirement.</p>
 
         <h2>3. Licence Grant</h2>
-        <p>Subject to these Terms, we grant you a limited, non-exclusive,
-        non-transferable, revocable licence to download, install, and use the App on
+        <p>Subject to these Terms, NetsoftTouch grants you a limited, non-exclusive,
+        non-transferable, revocable licence to download, install, and use the App on compatible
         Android devices that you own or control, for personal, non-commercial purposes.</p>
 
         <h2>4. Open-Source Components</h2>
@@ -280,10 +292,10 @@
         11, and 14) will continue to apply.</p>
 
         <h2>13. Third-Party Services</h2>
-        <p>The App integrates with third-party services including Google AdMob and Google
-        Play Billing. Your use of these services is subject to their respective terms and
-        privacy policies. We are not responsible for the practices of third-party service
-        providers.</p>
+        <p>The App integrates with third-party services including Google AdMob, Google Firebase
+        (Crashlytics &amp; Analytics), and Google Play Billing. Your use of these services is subject
+        to their respective terms and privacy policies. We are not responsible for the practices of
+        third-party service providers.</p>
 
         <h2>14. Governing Law</h2>
         <p>These Terms shall be governed by and construed in accordance with the laws of
