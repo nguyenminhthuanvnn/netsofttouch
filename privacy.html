@@ -202,7 +202,7 @@
                 </tr>
                 <tr>
                     <td><strong>App interactions &amp; Analytics</strong></td>
-                    <td>Measure feature usage, conversion funnel completions/failures, screen navigation, and aggregate performance.</td>
+                    <td>Measure feature usage, conversion funnel completions/failures, screen navigation, and aggregate performance. Conversion events carry only non-identifying attributes: the kind of conversion, the output format, the number of input files, and the source file&rsquo;s duration and size as coarse buckets &mdash; never a file name, path, or the file itself. When the free daily allowance blocks a conversion, the event also records how many conversions were left and how many rewarded refills had been used that day, so we can tell whether the allowance is set sensibly.</td>
                     <td>Google (Firebase Analytics)</td>
                 </tr>
                 <tr>
@@ -253,7 +253,7 @@
                 </tr>
                 <tr>
                     <td><strong>Daily conversion count</strong></td>
-                    <td>Enforce the free tier&rsquo;s daily conversion allowance and any rewarded-ad refills. Stored as a simple counter in the App&rsquo;s own private storage, tied to no account or identifier, and reset each day.</td>
+                    <td>Enforce the free tier&rsquo;s daily conversion allowance and any rewarded-ad refills. The counter itself lives in the App&rsquo;s own private storage, is tied to no account, and resets each day. It is never used to identify you. See section 2.2 for the one case in which the number of conversions left is included in an analytics event.</td>
                     <td>None</td>
                 </tr>
             </tbody>
@@ -271,12 +271,22 @@
         app version, subscription tier). Any error strings originating from conversion tasks are
         passed through a strict redaction filter before reporting to strip all personal file names,
         paths, and URIs.</p>
+        <p>Crash reporting is <strong>not</strong> switched off by declining ad consent. It carries no
+        advertising identifier and is used only to keep the App working; the crashes that matter most
+        happen in the first seconds of a cold start, before a consent dialog can resolve. Where the GDPR
+        applies, we rely on our <strong>legitimate interest</strong> (Article 6(1)(f)) in the security and
+        stability of the App as the legal basis for this processing. You can object to it at any time using
+        the contact address in section 12.</p>
 
         <h2>4. Product Analytics (Google Analytics for Firebase)</h2>
         <p>We use <strong>Google Analytics for Firebase</strong> to understand aggregate usage trends,
         such as conversion completion rates, screen views, and ad impression revenue.
-        Analytics collection is subject to user consent signals (Consent Mode) and can be managed
-        via in-app privacy settings.</p>
+        Analytics collection is gated on your consent decision: where a consent dialog is required
+        and you decline, analytics collection is switched off entirely, and where you accept, your
+        finer-grained choices are forwarded to Google as Consent Mode signals (ad storage, ad user data,
+        ad personalisation and analytics storage). You can change the decision at any time from
+        <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>. Where the GDPR applies, the legal
+        basis for analytics and advertising is your <strong>consent</strong> (Article 6(1)(a)).</p>
 
         <h2>5. Advertising (Google AdMob &amp; Consent Management)</h2>
         <p>The free version of the App displays ads served by <strong>Google AdMob</strong>.
@@ -323,23 +333,48 @@
         (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information
         from children.</p>
 
-        <h2>10. Your Rights &amp; Choices</h2>
-        <p>Depending on your location and applicable privacy legislation (such as GDPR or CCPA), you have the right to:</p>
+        <h2>10. International Transfers</h2>
+        <p>The Google services described above (Firebase Crashlytics, Google Analytics for Firebase,
+        Google AdMob and Google Play Billing) process data on Google infrastructure located outside your
+        country, including in the United States. Google carries out those transfers under the European
+        Commission's Standard Contractual Clauses and, for the United States, the EU&ndash;US, UK and
+        Swiss&ndash;US Data Privacy Frameworks. Your media files are not transferred anywhere: they never
+        leave your device.</p>
+
+        <h2>11. Your Rights &amp; Choices</h2>
+        <p>Depending on your location and applicable privacy legislation (such as the GDPR, the UK GDPR
+        or the CCPA/CPRA), you have the right to:</p>
         <ul>
-            <li>Withdraw or modify ad consent at any time via <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>.</li>
+            <li>Withdraw or modify ad consent at any time via <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>. Withdrawing consent does not affect processing carried out before you withdrew it.</li>
             <li>Reset or delete your Advertising ID through your Android device's system settings (<em>Settings &rarr; Google &rarr; Ads</em>).</li>
+            <li>Request <strong>access</strong> to the data we hold about you, and its <strong>correction</strong>, <strong>erasure</strong>, or <strong>portability</strong>.</li>
+            <li><strong>Object to</strong> or request <strong>restriction of</strong> processing we carry out on the basis of legitimate interests, including crash reporting.</li>
             <li>Request information regarding data processed in connection with your support inquiries.</li>
         </ul>
+        <p>Because the App has no user accounts and we hold no identifier that links a device to a person,
+        we may be unable to locate data about you from an identifier alone; where that is the case we will
+        say so, and will explain what you can clear on the device yourself. Uninstalling the App removes
+        every local file and counter it created.</p>
+        <p><strong>Do we sell or share your personal information?</strong> We do not sell your personal
+        information, and we do not share it for cross-context behavioural advertising in the CCPA/CPRA
+        sense unless you have opted in through the consent dialog. To opt out, decline personalised ads in
+        <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>, or upgrade to a paid tier, which
+        disables ad requests and ad measurement entirely. We do not knowingly process the personal
+        information of consumers under 16 for advertising purposes.</p>
+        <p><strong>Complaints.</strong> If you are in the European Economic Area, the United Kingdom or
+        Switzerland, you have the right to lodge a complaint with your local data protection supervisory
+        authority. We would appreciate the chance to address your concern first.</p>
         <p>To make an inquiry or exercise your privacy rights, please contact us at
-        <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a>.</p>
+        <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a>. We respond to
+        verifiable requests within 30 days.</p>
 
-        <h2>11. Changes to This Policy</h2>
+        <h2>12. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time to reflect updates in our app or regulatory requirements.
         The effective date at the top indicates when the latest version was published.</p>
 
-        <h2>12. Contact Us</h2>
+        <h2>13. Contact Us</h2>
         <p>If you have any questions or comments regarding this Privacy Policy, please contact us at:</p>
-        <p><strong>NetsoftTouch</strong><br>
+        <p><strong>NetsoftTouch</strong> &mdash; data controller for the processing described above<br>
         Email: <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a></p>
 
         <div class="footer">
