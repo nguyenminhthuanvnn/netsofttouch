@@ -117,7 +117,7 @@
 
     <div class="meta-info">
         <strong>Effective Date:</strong> January 01, 2026<br>
-        <strong>Last Updated:</strong> August 29, 2026
+        <strong>Last Updated:</strong> September 30, 2026
     </div>
 
     <p>This application, <strong>Float Video Player</strong> (<code>com.floatvideo.free</code>), is developed by <strong>Nguyen Minh Thuan (NetSoftTouch)</strong> as an independent personal project. This Service is provided at no cost as an ad-supported application and is intended for use "AS IS".</p>
@@ -159,7 +159,7 @@
 
     <h4>D. What the App Does Not Collect</h4>
     <ul>
-        <li>It does not upload, copy, scan the contents of, or transmit your video, audio, image or document files anywhere. Media is decoded and played entirely on your device.</li>
+        <li>It does not upload, copy, scan the contents of, or transmit your video, audio, image or document files to the developer or to any online service. Media is decoded and played on your device. The only exception is the Cast feature: when you choose a TV or Chromecast device yourself, the file you are playing is streamed directly to that device over your local Wi-Fi network, and nowhere else.</li>
         <li>It does not access your contacts, calendar, SMS, call logs, clipboard, camera or microphone, and requests no permission that would allow it to.</li>
         <li>It does not collect GPS or other precise location data.</li>
         <li>It does not enumerate or report the apps installed on your device. It checks for one package, the Huawei AppGallery (<code>com.huawei.appmarket</code>), only to know where to send you for an update. The Google Mobile Ads SDK additionally asks Android which app can handle a web link, a phone number, a text message or a calendar entry, so that tapping an ad opens the right app; the answers are used to open that app and are not collected by the developer.</li>
@@ -175,6 +175,7 @@
         <li><strong>Legacy Storage (<code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code>, Android 12L and older only):</strong> The same purpose on older Android versions, which have no per-media-type permission. These are declared with <code>maxSdkVersion="32"</code> and are not requested on newer devices.</li>
         <li><strong>Display Over Other Apps (<code>SYSTEM_ALERT_WINDOW</code>):</strong> Required to show the floating video window on top of other applications. It is always started by you and always dismissible.</li>
         <li><strong>Foreground Service (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>):</strong> Required to keep audio and floating video playback running while the app is in the background.</li>
+        <li><strong>Wi-Fi Multicast (<code>CHANGE_WIFI_MULTICAST_STATE</code>):</strong> Used only while you look for a Cast device, so the app can discover TVs and Chromecast devices on your local network. It does not give access to your location or to other devices' data.</li>
         <li><strong>Post Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Used solely to display media playback controls (play, pause, next, previous) in your notification shade.</li>
         <li><strong>Wake Lock (<code>WAKE_LOCK</code>) <em>(automatic)</em>:</strong> Keeps the screen or CPU awake during playback so video does not stop when the display would normally time out.</li>
         <li><strong>Internet and Network State (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>) <em>(automatic)</em>:</strong> Used to load advertisements, fetch remote configuration and send crash reports. Your media files are not sent over this connection.</li>
@@ -188,8 +189,9 @@
     <ul>
         <li><strong>Advertising:</strong> Google AdMob is the only advertising network in the app. Ads are requested only after the consent step below has been resolved.</li>
         <li><strong>EEA/UK Users (GDPR / ePrivacy):</strong> In compliance with Google's EU User Consent Policy, the app uses Google's certified User Messaging Platform (UMP) Consent Management Platform. Users in the European Economic Area, the United Kingdom and Switzerland are asked on first launch to grant or refuse consent for personalized advertising, and no advertising SDK is initialized and no ad is requested before that form has been answered. You can review, change or withdraw your choice at any time through <em>Settings &rarr; Ad Privacy Settings</em> inside the app. Where consent is the legal basis, withdrawing it is as easy as giving it and has effect for the future.</li>
-        <li><strong>Analytics, crash reporting and remote configuration:</strong> Firebase Analytics, Crashlytics and Remote Config start when the app launches and operate independently of the advertising consent choice. They are used to keep the app stable and working correctly, which the developer relies on as a legitimate interest under GDPR Article 6(1)(f). They do not receive your media files or their contents.</li>
-        <li><strong>California &amp; US State Privacy Rights (CCPA / CPRA and comparable state laws):</strong> The developer does not sell personal information and does not share it for cross-context behavioral advertising in exchange for money. Device identifiers used for advertising are processed in accordance with applicable state regulations, and refusing personalized ads in the consent form or resetting your Advertising ID limits their use.</li>
+        <li><strong>Analytics, crash reporting and remote configuration:</strong> Firebase Analytics, Crashlytics and Remote Config are used to keep the app stable and working correctly, which the developer relies on as a legitimate interest under GDPR Article 6(1)(f). They do not receive your media files or their contents. You can turn off usage analytics and crash reporting at any time with the <em>Settings &rarr; Usage &amp; crash reporting</em> switch inside the app; once it is off, Firebase Analytics and Crashlytics stop collecting data from your device.</li>
+        <li><strong>Google Consent Mode:</strong> Firebase Analytics starts with advertising-related signals (ad storage, ad user data and ad personalization) denied by default. They are enabled only after the consent step has been resolved and, for users in the EEA, UK and Switzerland, only for the purposes you actually agreed to in the consent form. Choosing &ldquo;Do not consent&rdquo; or closing the form keeps them denied.</li>
+        <li><strong>California &amp; US State Privacy Rights (CCPA / CPRA and comparable state laws):</strong> The developer does not sell personal information for money. Google AdMob may, however, use your Advertising ID, IP address and ad interaction data to show personalized ads, which some US state laws treat as &ldquo;sharing&rdquo; for cross-context behavioral advertising or as targeted advertising. You can opt out at any time by deleting or resetting your Advertising ID, or by turning on &ldquo;Opt out of Ads Personalization&rdquo;, in Android <em>Settings &rarr; Privacy &rarr; Ads</em>; ads will then be non-personalized.</li>
     </ul>
 
     <hr>
@@ -204,7 +206,7 @@
     <ul>
         <li><strong>Data on your device:</strong> clear it yourself at any time through Android <em>Settings &rarr; Apps &rarr; Float Video Player &rarr; Storage &rarr; Clear data</em>, or by uninstalling the app.</li>
         <li><strong>Advertising identifier:</strong> reset or delete it in Android <em>Settings &rarr; Privacy &rarr; Ads</em>, and change your consent choice in the app's <em>Ad Privacy Settings</em>.</li>
-        <li><strong>Data held by Google:</strong> exercise your rights directly with Google using the links in section 1(C), or contact the developer at the address in section 9 and your request will be forwarded.</li>
+        <li><strong>Data held by Google:</strong> exercise your rights directly with Google using the links in section 1(C), or contact the developer at the address in section 10 and your request will be forwarded.</li>
     </ul>
     <p>If you are in the EEA or the UK and believe your data has been handled unlawfully, you also have the right to lodge a complaint with your national data protection supervisory authority.</p>
 
@@ -219,7 +221,7 @@
     <ul>
         <li><strong>Retention:</strong> Diagnostic and analytics data is retained in aggregated or pseudonymized form according to the retention policies of Google Analytics for Firebase and Crashlytics. Data stored on your device is kept until you clear the app's data or uninstall the app.</li>
         <li><strong>Security in transit:</strong> All connections the app makes to Google's advertising, configuration and diagnostic endpoints, and to the developer's own website, are restricted to HTTPS by the app's network security configuration.</li>
-        <li><strong>Deletion requests:</strong> Because there is no user account, there is no personal account database to delete. For any inquiry about data deletion or third-party identifier removal, please use the contact address in section 9.</li>
+        <li><strong>Deletion requests:</strong> Because there is no user account, there is no personal account database to delete. For any inquiry about data deletion or third-party identifier removal, please use the contact address in section 10.</li>
     </ul>
 
     <hr>
