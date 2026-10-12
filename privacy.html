@@ -162,13 +162,17 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">NeoVid Converter &mdash; Effective 1 October 2026</p>
+        <p class="subtitle">NeoVid Converter for Android and for iPhone &amp; iPad &mdash; Effective 12 October 2026</p>
 
         <div class="highlight-box">
             <p><strong>Summary:</strong> NeoVid Converter processes all your media files
             locally on your device using bundled FFmpeg libraries. We do not upload, stream,
             or transmit your videos, audio files, or contact data to any server.</p>
         </div>
+
+        <p>This policy covers both editions of the App: the Android edition distributed on Google Play
+        and the iOS / iPadOS edition distributed on the Apple App Store. Where the two differ, the text
+        says which edition a statement applies to.</p>
 
         <h2>1. Who We Are</h2>
         <p>NeoVid Converter ("the App") is published by <strong>NetsoftTouch</strong>
@@ -183,8 +187,8 @@
 
         <h3>2.2 Information Collected Automatically</h3>
         <p>When you use the App, certain information is collected automatically via integrated
-        Google service SDKs to ensure stability, measure non-identifying performance metrics,
-        serve advertisements, and manage in-app subscriptions:</p>
+        Google service SDKs and by the store you installed the App from, to ensure stability, measure
+        non-identifying performance metrics, serve advertisements, and manage in-app purchases:</p>
 
         <table>
             <thead>
@@ -207,12 +211,12 @@
                 </tr>
                 <tr>
                     <td><strong>Advertising ID &amp; Ad Metrics</strong></td>
-                    <td>Serve and measure personalized or non-personalized ads (free tier only, subject to user consent).</td>
+                    <td>Serve and measure personalized or non-personalized ads (free tier only, subject to user consent). On Android this is the Google Advertising ID. On iOS it is Apple&rsquo;s Identifier for Advertisers (IDFA), which the App can read only if you choose &ldquo;Allow&rdquo; in the system tracking prompt (App Tracking Transparency); if you decline, the IDFA is not available to the App or to Google.</td>
                     <td>Google (AdMob)</td>
                 </tr>
                 <tr>
                     <td><strong>Approximate location</strong></td>
-                    <td>Inferred by the Google Mobile Ads SDK from your device&rsquo;s IP address (not from GPS or network-based location providers). Used to serve geographically relevant ads, measure ad performance by region, and comply with regional ad regulations. The App does not request device location permissions (ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION).</td>
+                    <td>Inferred by the Google Mobile Ads SDK from your device&rsquo;s IP address (not from GPS or network-based location providers). Used to serve geographically relevant ads, measure ad performance by region, and comply with regional ad regulations. The App never requests a device location permission on either platform.</td>
                     <td>Google (AdMob)</td>
                 </tr>
                 <tr>
@@ -222,8 +226,8 @@
                 </tr>
                 <tr>
                     <td><strong>Purchase &amp; Subscription Tokens</strong></td>
-                    <td>Verify and manage subscription / Lifetime Pro entitlement.</td>
-                    <td>Google (Google Play Billing)</td>
+                    <td>Verify and manage subscription / Lifetime Pro entitlement. The store tells the App which product is owned; on iOS the App also passes Apple a random identifier it generated itself, so that a purchase can be matched to this installation. When a purchase completes, an analytics event records the product, its price and currency, and the store&rsquo;s transaction number &mdash; never your name, e-mail address or payment details, which the App cannot see.</td>
+                    <td>Google Play Billing (Android) or Apple App Store (iOS); Google (Firebase Analytics) for the purchase event</td>
                 </tr>
             </tbody>
         </table>
@@ -244,21 +248,26 @@
                 <tr>
                     <td><strong>Media files (Video &amp; Audio)</strong></td>
                     <td>Locally convert, extract, compress, trim, merge, or adjust speed of files you select.</td>
-                    <td>READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, or system photo/media picker</td>
+                    <td><strong>Android:</strong> READ_MEDIA_VIDEO, READ_MEDIA_AUDIO, or the system photo/media picker. <strong>iOS:</strong> the system photo picker and Files picker (which give the App only the items you pick), access to your music library if you choose a song from it, and &ldquo;add only&rdquo; access to Photos if you save a result there. Files shared into the App from another app are copied to the App&rsquo;s own storage on the device.</td>
                 </tr>
                 <tr>
-                    <td><strong>Contacts</strong></td>
+                    <td><strong>Contacts</strong> (Android only)</td>
                     <td>Assign a converted audio track as a specific contact's ringtone when requested. A prominent in-app disclosure is displayed before permission is requested.</td>
                     <td>READ_CONTACTS, WRITE_CONTACTS</td>
                 </tr>
                 <tr>
-                    <td><strong>System Settings</strong></td>
+                    <td><strong>System Settings</strong> (Android only)</td>
                     <td>Set a converted audio track as the default phone ringtone, notification sound, or alarm.</td>
                     <td>WRITE_SETTINGS</td>
                 </tr>
                 <tr>
+                    <td><strong>Notifications</strong></td>
+                    <td>Tell you when a conversion running in the background has finished or failed. The notification is created on the device; nothing is sent through a push server.</td>
+                    <td>Notification permission (both platforms)</td>
+                </tr>
+                <tr>
                     <td><strong>Daily conversion count</strong></td>
-                    <td>Enforce the free tier&rsquo;s daily conversion allowance and any rewarded-ad refills. The counter itself lives in the App&rsquo;s own private storage, is tied to no account, and resets each day. It is never used to identify you. See section 2.2 for the one case in which the number of conversions left is included in an analytics event.</td>
+                    <td>Enforce the free tier&rsquo;s daily conversion allowance and any rewarded-ad refills. The counter itself lives in the App&rsquo;s own private storage (on iOS, in the device Keychain, where it can remain after the App is deleted so that reinstalling does not reset the day&rsquo;s allowance), is tied to no account, and resets each day. It is never used to identify you. See section 2.2 for the one case in which the number of conversions left is included in an analytics event.</td>
                     <td>None</td>
                 </tr>
             </tbody>
@@ -270,7 +279,7 @@
         </div>
 
         <h2>3. Crash Reporting and Diagnostics (Firebase Crashlytics)</h2>
-        <p>The App integrates <strong>Firebase Crashlytics</strong> (including native NDK crash handling)
+        <p>The App integrates <strong>Firebase Crashlytics</strong> (including native crash handling)
         to capture application crashes and system errors. Diagnostic reports include stack traces,
         device state at the time of crash, and high-level non-identifying build keys (e.g. build type,
         app version, subscription tier). Any error strings originating from conversion tasks are
@@ -281,7 +290,7 @@
         happen in the first seconds of a cold start, before a consent dialog can resolve. Where the GDPR
         applies, we rely on our <strong>legitimate interest</strong> (Article 6(1)(f)) in the security and
         stability of the App as the legal basis for this processing. You can object to it at any time using
-        the contact address in section 12.</p>
+        the contact address in section 13.</p>
 
         <h2>4. Product Analytics (Google Analytics for Firebase)</h2>
         <p>We use <strong>Google Analytics for Firebase</strong> to understand aggregate usage trends,
@@ -295,7 +304,14 @@
 
         <h2>5. Advertising (Google AdMob &amp; Consent Management)</h2>
         <p>The free version of the App displays ads served by <strong>Google AdMob</strong>.
-        AdMob may use your Advertising ID and device information in accordance with your consent preferences.</p>
+        AdMob may use your advertising identifier and device information in accordance with your consent preferences.
+        Google explains how it uses information from apps that use its services at
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+        <p><strong>iOS tracking permission.</strong> On iPhone and iPad the App asks for Apple&rsquo;s tracking
+        permission once, after any consent dialog and before the ads SDK starts. If you choose
+        &ldquo;Ask App Not to Track&rdquo;, the App and Google do not receive the IDFA and you are shown
+        ads that do not rely on it. You can change the choice at any time in
+        <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</p>
         <p>For users located in the European Economic Area (EEA), United Kingdom, and Switzerland,
         the App presents a Google-certified Consent Management Platform (User Messaging Platform / UMP)
         dialog before any ads are requested or loaded. You can change your consent preferences at any time
@@ -309,10 +325,12 @@
         experience with ad requests and ad-related measurement disabled, and are never offered a
         rewarded ad.</p>
 
-        <h2>6. In-App Purchases (Google Play Billing)</h2>
-        <p>The App offers optional in-app purchases and subscriptions through <strong>Google Play Billing</strong>.
-        All payment processing and billing transactions are handled exclusively by Google Play. We do not
-        collect, store, or have access to your payment card details or financial credentials.</p>
+        <h2>6. In-App Purchases (Google Play Billing and Apple App Store)</h2>
+        <p>The App offers optional in-app purchases and subscriptions through <strong>Google Play Billing</strong>
+        on Android and through <strong>Apple&rsquo;s In-App Purchase</strong> on iPhone and iPad.
+        All payment processing and billing transactions are handled exclusively by Google Play or by Apple. We do not
+        collect, store, or have access to your payment card details or financial credentials, and we do not
+        learn your Google or Apple account identity.</p>
 
         <h2>7. Third-Party Service Providers</h2>
         <p>We share data only with the third-party providers listed below to support core app functionality:</p>
@@ -323,6 +341,8 @@
                 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Privacy</a></li>
             <li><strong>Google Play Billing:</strong>
                 <a href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank" rel="noopener">Google Play Terms</a></li>
+            <li><strong>Apple (App Store In-App Purchase, iOS edition):</strong>
+                <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
         </ul>
         <p>We do <strong>not</strong> sell, rent, monetize, or trade your personal data to any third party.</p>
 
@@ -330,7 +350,7 @@
         <ul>
             <li><strong>Support Correspondence:</strong> Retained only as long as necessary to address and resolve your support request.</li>
             <li><strong>Analytics &amp; Crash Data:</strong> Stored and automatically purged by Google per standard Firebase retention schedules.</li>
-            <li><strong>Local Media &amp; Files:</strong> Stored strictly on your local device. Uninstalling the app removes all local database records and application-scoped files.</li>
+            <li><strong>Local Media &amp; Files:</strong> Stored strictly on your local device. Uninstalling the app removes all local database records and application-scoped files. On iOS, converted files are kept in the App&rsquo;s folder in the Files app and are removed with the App; the daily conversion counter described in section 2.3 can remain in the device Keychain.</li>
         </ul>
 
         <h2>9. Children's Privacy</h2>
@@ -340,7 +360,7 @@
 
         <h2>10. International Transfers</h2>
         <p>The Google services described above (Firebase Crashlytics, Google Analytics for Firebase,
-        Google AdMob and Google Play Billing) process data on Google infrastructure located outside your
+        Google AdMob and Google Play Billing) and, for purchases made in the iOS edition, Apple, process data on Google infrastructure located outside your
         country, including in the United States. Google carries out those transfers under the European
         Commission's Standard Contractual Clauses and, for the United States, the EU&ndash;US, UK and
         Swiss&ndash;US Data Privacy Frameworks. Your media files are not transferred anywhere: they never
@@ -351,7 +371,7 @@
         or the CCPA/CPRA), you have the right to:</p>
         <ul>
             <li>Withdraw or modify ad consent at any time via <strong>Settings &rarr; Privacy Options (Ad Consent)</strong>. Withdrawing consent does not affect processing carried out before you withdrew it.</li>
-            <li>Reset or delete your Advertising ID through your Android device's system settings (<em>Settings &rarr; Google &rarr; Ads</em>).</li>
+            <li>Reset or delete your Advertising ID through your Android device's system settings (<em>Settings &rarr; Google &rarr; Ads</em>). On iPhone and iPad, allow or refuse tracking per app in <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.</li>
             <li>Request <strong>access</strong> to the data we hold about you, and its <strong>correction</strong>, <strong>erasure</strong>, or <strong>portability</strong>.</li>
             <li><strong>Object to</strong> or request <strong>restriction of</strong> processing we carry out on the basis of legitimate interests, including crash reporting.</li>
             <li>Request information regarding data processed in connection with your support inquiries.</li>
@@ -359,7 +379,8 @@
         <p>Because the App has no user accounts and we hold no identifier that links a device to a person,
         we may be unable to locate data about you from an identifier alone; where that is the case we will
         say so, and will explain what you can clear on the device yourself. Uninstalling the App removes
-        every local file and counter it created.</p>
+        every local file it created, and on Android every counter as well (on iOS the daily conversion
+        counter can remain in the device Keychain, as described in section 2.3).</p>
         <p><strong>Do we sell or share your personal information?</strong> We do not sell your personal
         information, and we do not share it for cross-context behavioural advertising in the CCPA/CPRA
         sense unless you have opted in through the consent dialog. To opt out, decline personalised ads in
@@ -380,6 +401,7 @@
         <h2>13. Contact Us</h2>
         <p>If you have any questions or comments regarding this Privacy Policy, please contact us at:</p>
         <p><strong>NetsoftTouch</strong> &mdash; data controller for the processing described above<br>
+        Address: 15/6 Street No. 4, Quarter 55, Thong Tay Hoi Ward, Ho Chi Minh City, Vietnam<br>
         Email: <a href="mailto:nguyenminhthuanvnn@gmail.com">nguyenminhthuanvnn@gmail.com</a></p>
 
         <div class="footer">
